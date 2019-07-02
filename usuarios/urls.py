@@ -1,10 +1,10 @@
 from django.conf.urls import url
-from . import views
+from django.views.decorators.csrf import csrf_exempt   
+from usuarios.views import MyView
 
 app_name = 'usuarios'
 
 urlpatterns = [
-    url(r'usuarios/', views.get, name="get"),
-    url(r'usuario/?$', views.search, name='search'),
-    url(r'usuario/', views.post, name="post")
+    url(r'usuarios/$', csrf_exempt(MyView.as_view()), name='get'),
+    url(r'usuario/', csrf_exempt(MyView.as_view()), name='post')
 ]
