@@ -15,13 +15,13 @@ virtualenv env
 source env/bin/activate
 ```
 ```
+cd usuarios
+```
+```
 pip install django==2.2.2
 ```
 ```
 pip install django-cors-headers
-```
-```
-cd usuarios
 ```
 ```
 python ./manage.py runserver
